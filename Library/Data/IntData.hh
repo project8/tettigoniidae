@@ -5,8 +5,8 @@
  *      Author: N.S. Oblath
  */
 
-#ifndef TTGD_TESTING_TESTDATA1
-#define TTGD_TESTING_TESTDATA1
+#ifndef TTGD_DATA_TESTDATA1
+#define TTGD_DATA_TESTDATA1
 
 #include "Data.hh"
 #include "MemberVariable.hh"
@@ -14,12 +14,12 @@
 namespace tettigoniidae
 {
 
-    class TestData1 : public Nymph::Data
+    class IntData : public Nymph::Data
     {
         public:
-            TestData1();
+            IntData();
 
-            virtual ~TestData1();
+            virtual ~IntData();
 
             MEMVAR( int, IValue1 );
             MEMVAR( int, IValue2 );
@@ -27,4 +27,4 @@ namespace tettigoniidae
 
 } /* namespace tettigoniidae */
 
-#endif /* TTGD_TESTING_TESTDATA1 */
+#endif /* TTGD_DATA_TESTDATA1 */

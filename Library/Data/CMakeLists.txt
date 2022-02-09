@@ -6,13 +6,13 @@ include_directories( BEFORE
 )
 
 set( TTGDData_HEADERFILES
-    TestData1.hh
-    TestData2.hh
+    DoubleData.hh
+    IntData.hh
 )
 
 set( TTGDData_SOURCEFILES
-    TestData1.cc
-    TestData2.cc
+    DoubleData.cc
+    IntData.cc
 )
 
 

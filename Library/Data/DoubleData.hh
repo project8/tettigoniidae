@@ -14,12 +14,12 @@
 namespace tettigoniidae
 {
 
-    class TestData2 : public Nymph::Data
+    class DoubleData : public Nymph::Data
     {
         public:
-            TestData2();
+            DoubleData();
 
-            virtual ~TestData2();
+            virtual ~DoubleData();
 
             MEMVAR( double, DValue1 );
             MEMVAR( double, DValue2 );

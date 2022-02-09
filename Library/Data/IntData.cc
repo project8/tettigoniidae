@@ -1,14 +1,14 @@
 
-#include "TestData1.hh"
+#include "IntData.hh"
 
 namespace tettigoniidae
 {
-    TestData1::TestData1() :
+    IntData::IntData() :
             Nymph::Data(),
             fIValue1( 0 ),
             fIValue2( 5 )
     {}
 
-    TestData1::~TestData1()
+    IntData::~IntData()
     {}
 }
