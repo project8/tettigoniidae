@@ -16,7 +16,26 @@ namespace tettigoniidae
 {
     class IntData;
 
-    // This processor has a data slot that takes TestData1 as input and has no output (TestData1 is modified in place)
+    /*!
+     @class Adder
+     @author N. S. Oblath
+
+     @brief Adds a value to data in place.
+
+     @details
+     Addition is performed in place
+
+     Processor type: adder
+
+     Available configuration options:
+     - int-value: int -- Value to add to IntData
+
+     Slots:
+     - add-int: Adds a value to IntData; Requires IntData; Adds no data; Emits signal "int"
+
+     Signals:
+     - int: void (Nymph::DataHandle) -- Emitted after adding to IntData
+    */
     class Adder : public Nymph::Processor
     {
         public:
@@ -26,7 +45,7 @@ namespace tettigoniidae
 
             void Configure( const scarab::param_node& node );
 
-            MEMVAR( int, AddValue );
+            MEMVAR( int, IntValue );
 
         public:
             void Add( IntData& data );

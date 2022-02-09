@@ -10,7 +10,7 @@ namespace tettigoniidae
 {
     Adder::Adder( const std::string& name ) :
             Processor( name ),
-            fAddValue( 0 ),
+            fIntValue( 0 ),
             fIntSignal( "int", this ),
             fAddIntSlot( "add-int", this, &Adder::Add, &fIntSignal )
     {}
@@ -20,15 +20,15 @@ namespace tettigoniidae
 
     void Adder::Configure( const scarab::param_node& node )
     {
-        fAddValue = node.get_value( "to-add", fAddValue );
+        fIntValue = node.get_value( "int-value", fIntValue );
 
         return;
     }
 
     void Adder::Add( IntData& data )
     {
-        data.SetIValue1( data.GetIValue1() + fAddValue );
-        data.SetIValue2( data.GetIValue2() + fAddValue );
+        data.SetIValue1( data.GetIValue1() + fIntValue );
+        data.SetIValue2( data.GetIValue2() + fIntValue );
         return;
     }
 

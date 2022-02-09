@@ -1,12 +1,12 @@
 /*
- * TestData1.hh
+ * IntData.hh
  *
  *  Created on: Jan 6, 2022
  *      Author: N.S. Oblath
  */
 
-#ifndef TTGD_DATA_TESTDATA1
-#define TTGD_DATA_TESTDATA1
+#ifndef TTGD_DATA_INTDATA
+#define TTGD_DATA_INTDATA
 
 #include "Data.hh"
 #include "MemberVariable.hh"
@@ -14,6 +14,11 @@
 namespace tettigoniidae
 {
 
+    /*!
+     @class IntData
+     @author N. S. Oblath
+     @brief Two integer values
+    */
     class IntData : public Nymph::Data
     {
         public:
@@ -27,4 +32,4 @@ namespace tettigoniidae
 
 } /* namespace tettigoniidae */
 
-#endif /* TTGD_DATA_TESTDATA1 */
+#endif /* TTGD_DATA_INTDATA */
