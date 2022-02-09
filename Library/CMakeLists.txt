@@ -2,4 +2,4 @@
 # Author: N.S. Oblath
 
 add_subdirectory( Data )
-#add_subdirectory( Processors )
+add_subdirectory( Processors )
