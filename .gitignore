@@ -42,3 +42,9 @@
 # Build directories
 build*/
 
+# Documentation builds in the source tree
+Documentation2/build/
+Documentation2/source/api/
+
+# also, for now we're using Documentation2 instead of Documentation
+Documentation/

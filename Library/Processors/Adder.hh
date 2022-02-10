@@ -20,12 +20,12 @@ namespace tettigoniidae
      @class Adder
      @author N. S. Oblath
 
-     @brief Adds a value to data in place.
+     @brief Adds a value to data in place. And do something else.
 
      @details
      Addition is performed in place
 
-     Processor type: adder
+     @proctype adder
 
      Available configuration options:
      - int-value: int -- Value to add to IntData
