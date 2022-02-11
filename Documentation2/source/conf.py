@@ -14,7 +14,6 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
-
 # -- Project information -----------------------------------------------------
 
 project = 'tettigoniidae'
@@ -52,15 +51,16 @@ exhale_args = {
     # "treeViewIsBootstrap": True,
     "exhaleExecutesDoxygen": True,
     "exhaleDoxygenStdin":    """
-        INPUT = ./dox ../../Library
+        INPUT = ../../Library
         INCLUDE_PATH = ../../nymph/Scarab/library/utility ../../nymph/Scarab/library/logger ../../nymph/Cpp/Library/Utility ../../nymph/Cpp/Library/Processor ../build/_cmake/nymph/Scarab/library/utility
+        ALIASES += proctype="\\xrefitem processors \\\"Processor\\\" \\\"Processors\\\"" 
         ALIASES += procdetails="\details \par Processor Details"
-        ALIASES += "proctype{1}=<b>Type:</b> \1"
-        ALIASES += processor="\class"
         ALIASES += config="\par Processor Configuration"
-        ALIASES += configparam{2}="\c \1: \c \2 -- "
+        ALIASES += configparam{2}="<tt>\\1</tt>: (<tt>\\2</tt>) "
         ALIASES += signals="\par Signals"
+        ALIASES += signal{2}="<tt>\\1</tt> [<tt>\\2</tt>]: "
         ALIASES += slots="\par Slots"
+        ALIASES += slot{2}="<tt>\\1</tt> [<tt>\\2</tt>]: "
     """,
     "verboseBuild": True
 }
@@ -97,5 +97,5 @@ def setup(app):
 
     # Run CMake to have access to configured header files
     cmake_path = "build/_cmake"
-    os.mkdir(cmake_path)
+    os.makedirs(cmake_path, exist_ok=True)
     subprocess.run(["cmake", "../../.."], cwd=cmake_path)

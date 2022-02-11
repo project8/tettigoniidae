@@ -17,7 +17,7 @@ namespace tettigoniidae
     class IntData;
 
     /*!
-     @processor Adder
+     @class Adder
      @author N. S. Oblath
 
      @brief Adds a value to data
@@ -25,19 +25,16 @@ namespace tettigoniidae
      @procdetails
      Does addition in place
 
-     @proctype{adder}
+     @proctype adder
 
      @config
-     @configparam{int-value, int} Value to add to IntData
-
-     Available configuration options:
-     - int-value: int -- Value to add to IntData
+     @configparam{int-value,int} Value to add to IntData
 
      @slots
-     - add-int: Adds a value to IntData; Requires IntData; Adds no data; Emits signal "int"
+     @slot{add-int,void (DataHandle)} Adds a value to IntData; Requires IntData; Adds no data; Emits signal "int"
 
      @signals
-     - int: void (Nymph::DataHandle) -- Emitted after adding to IntData
+     @signal{int,void (DataHandle)} Emitted after adding to IntData
     */
     class Adder : public Nymph::Processor
     {
