@@ -52,7 +52,7 @@ exhale_args = {
     # "treeViewIsBootstrap": True,
     "exhaleExecutesDoxygen": True,
     "exhaleDoxygenStdin":    """
-        INPUT = ../../Library
+        INPUT = ./dox ../../Library
         INCLUDE_PATH = ../../nymph/Scarab/library/utility ../../nymph/Scarab/library/logger ../../nymph/Cpp/Library/Utility ../../nymph/Cpp/Library/Processor ../build/_cmake/nymph/Scarab/library/utility
         ALIASES += procdetails="\details \par Processor Details"
         ALIASES += "proctype{1}=<b>Type:</b> \1"
