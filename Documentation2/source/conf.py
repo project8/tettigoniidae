@@ -85,3 +85,11 @@ html_theme = 'sphinx_rtd_theme'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+def setup(app):
+    import os, subprocess
+
+    # Run CMake to have access to configured header files
+    cmake_path = "build/_cmake"
+    os.mkdir(cmake_path)
+    subprocess.run(["cmake", "../../.."], cwd=cmake_path)

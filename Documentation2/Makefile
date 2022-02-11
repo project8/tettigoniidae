@@ -15,11 +15,11 @@ help:
 .PHONY: help Makefile clean
 
 clean:
-	rm -rf _doxygen/ api/
+	rm -rf ../build/_doxygen/ ../build/_cmake/ api/
 	@$(SPHINXBUILD) -M clean "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 	 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 %: Makefile
-	rm -rf ../build/_doxygen/ api/
+	rm -rf ../build/_doxygen/ ../build/_cmake/ api/
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
