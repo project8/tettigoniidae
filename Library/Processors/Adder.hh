@@ -1,5 +1,5 @@
-/*
- * TestProcessorClasses.hh
+/*!
+ * @file Adder.hh
  *
  *  Created on: Nov 25, 2021
  *      Author: N.S. Oblath
@@ -17,23 +17,26 @@ namespace tettigoniidae
     class IntData;
 
     /*!
-     @class Adder
+     @processor Adder
      @author N. S. Oblath
 
-     @brief Adds a value to data in place. And do something else.
+     @brief Adds a value to data
 
-     @details
-     Addition is performed in place
+     @procdetails
+     Does addition in place
 
-     @proctype adder
+     @proctype{adder}
+
+     @config
+     @configparam{int-value, int} Value to add to IntData
 
      Available configuration options:
      - int-value: int -- Value to add to IntData
 
-     Slots:
+     @slots
      - add-int: Adds a value to IntData; Requires IntData; Adds no data; Emits signal "int"
 
-     Signals:
+     @signals
      - int: void (Nymph::DataHandle) -- Emitted after adding to IntData
     */
     class Adder : public Nymph::Processor
@@ -43,11 +46,13 @@ namespace tettigoniidae
 
             virtual ~Adder();
 
+            /// Processor configuration
             void Configure( const scarab::param_node& node );
 
             MEMVAR( int, IntValue );
 
         public:
+            /// Add an integer to integer data
             void Add( IntData& data );
 
         public:

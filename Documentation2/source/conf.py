@@ -53,8 +53,14 @@ exhale_args = {
     "exhaleExecutesDoxygen": True,
     "exhaleDoxygenStdin":    """
         INPUT = ../../Library
-        PREPROC_INCLUDE_PATH = ../../nymph/Scarab/library/utility ../../nymph/Scarab/library/logger ../../nymph/Cpp/Library/Utility ../../nymph/Cpp/Library/Processor
-        ALIASES += proctype{1}="<b>Type:</b> \1"
+        INCLUDE_PATH = ../../nymph/Scarab/library/utility ../../nymph/Scarab/library/logger ../../nymph/Cpp/Library/Utility ../../nymph/Cpp/Library/Processor ../build/_cmake/nymph/Scarab/library/utility
+        ALIASES += procdetails="\details \par Processor Details"
+        ALIASES += "proctype{1}=<b>Type:</b> \1"
+        ALIASES += processor="\class"
+        ALIASES += config="\par Processor Configuration"
+        ALIASES += configparam{2}="\c \1: \c \2 -- "
+        ALIASES += signals="\par Signals"
+        ALIASES += slots="\par Slots"
     """,
     "verboseBuild": True
 }
