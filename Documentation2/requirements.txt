@@ -1,2 +1,4 @@
+sphinx>=3.0,<5
+breathe>=4.32.0
 exhale>=0.3.0
 sphinx-rtd-theme
