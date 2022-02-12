@@ -28,6 +28,11 @@ jobs:
         with:
           submodules: recursive
 
+      - name: Set output
+        id: vars
+        run: echo ::set-output name=short_ref::${GITHUB_REF#refs/*/}
+
+
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
@@ -47,6 +52,13 @@ jobs:
           cd Documentation2
           pip install -r requirements.txt
           make html
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4.2.3
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: Documentation2/build/html # The folder the action should deploy.
+          target-folder: ${{ steps.vars.outputs.short_ref }}
 
       #- name: Run tests
       #  run: |
