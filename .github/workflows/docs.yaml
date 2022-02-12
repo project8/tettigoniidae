@@ -37,10 +37,10 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -yq \
-            boost \
             doxygen \
-            rapidjson \
-            yaml-cpp
+            libboost-all-dev \
+            libyaml-cpp-dev \
+            rapidjson-dev
 
       - name: Configure
         run: |
