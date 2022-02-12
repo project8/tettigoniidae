@@ -1,0 +1,26 @@
+
+.. _program_listing_file__home_runner_work_tettigoniidae_tettigoniidae_Library_Data_DoubleData.cc:
+
+Program Listing for File DoubleData.cc
+======================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__home_runner_work_tettigoniidae_tettigoniidae_Library_Data_DoubleData.cc>` (``/home/runner/work/tettigoniidae/tettigoniidae/Library/Data/DoubleData.cc``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #include "DoubleData.hh"
+   
+   namespace tettigoniidae
+   {
+       DoubleData::DoubleData() :
+               Nymph::Data(),
+               fDValue1( 0. ),
+               fDValue2( 10. )
+       {}
+   
+       DoubleData::~DoubleData()
+       {}
+   }

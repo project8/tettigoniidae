@@ -1,0 +1,17 @@
+
+.. _program_listing_file__home_runner_work_tettigoniidae_tettigoniidae_Library_CMakeLists.txt:
+
+Program Listing for File CMakeLists.txt
+=======================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__home_runner_work_tettigoniidae_tettigoniidae_Library_CMakeLists.txt>` (``/home/runner/work/tettigoniidae/tettigoniidae/Library/CMakeLists.txt``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   # CMakeLists for tettigoniidae/Library
+   # Author: N.S. Oblath
+   
+   add_subdirectory( Data )
+   add_subdirectory( Processors )

@@ -1,0 +1,44 @@
+
+.. _program_listing_file__home_runner_work_tettigoniidae_tettigoniidae_Library_Data_CMakeLists.txt:
+
+Program Listing for File CMakeLists.txt
+=======================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__home_runner_work_tettigoniidae_tettigoniidae_Library_Data_CMakeLists.txt>` (``/home/runner/work/tettigoniidae/tettigoniidae/Library/Data/CMakeLists.txt``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   # CMakeLists for tettigoniidae/Library/Data
+   # Author: N.S. Oblath
+   
+   include_directories( BEFORE 
+       ${CMAKE_CURRENT_SOURCE_DIR}
+   )
+   
+   set( TTGDData_HEADERFILES
+       DoubleData.hh
+       IntData.hh
+   )
+   
+   set( TTGDData_SOURCEFILES
+       DoubleData.cc
+       IntData.cc
+   )
+   
+   
+   ##################################################
+   
+   pbuilder_library( 
+       TARGET TTGDData 
+       SOURCES ${TTGDData_SOURCEFILES}
+       PUBLIC_EXTERNAL_LIBRARIES ${PUBLIC_EXT_LIBS}
+   )
+   
+   pbuilder_component_install_and_export( 
+       COMPONENT Library
+       LIBTARGETS TTGDData
+   )
+   
+   pbuilder_install_headers( ${TTGDData_HEADERFILES} )

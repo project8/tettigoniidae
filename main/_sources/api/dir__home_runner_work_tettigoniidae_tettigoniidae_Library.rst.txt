@@ -1,0 +1,22 @@
+.. _dir__home_runner_work_tettigoniidae_tettigoniidae_Library:
+
+
+Directory Library
+=================
+
+
+*Directory path:* ``/home/runner/work/tettigoniidae/tettigoniidae/Library``
+
+Subdirectories
+--------------
+
+- :ref:`dir__home_runner_work_tettigoniidae_tettigoniidae_Library_Data`
+- :ref:`dir__home_runner_work_tettigoniidae_tettigoniidae_Library_Processors`
+
+
+Files
+-----
+
+- :ref:`file__home_runner_work_tettigoniidae_tettigoniidae_Library_CMakeLists.txt`
+
+

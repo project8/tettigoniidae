@@ -1,0 +1,26 @@
+.. _exhale_class_classtettigoniidae_1_1IntData:
+
+Class IntData
+=============
+
+- Defined in :ref:`file__home_runner_work_tettigoniidae_tettigoniidae_Library_Data_IntData.hh`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public Data``
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: tettigoniidae::IntData
+   :project: tettigoniidae
+   :members:
+   :protected-members:
+   :undoc-members:

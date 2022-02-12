@@ -1,0 +1,14 @@
+.. _exhale_function_Data_2CMakeLists_8txt_1a86c390bb26e2d5a3724031bff7b4aa2e:
+
+Function include_directories(BEFORE ${CMAKE_CURRENT_SOURCE_DIR})
+================================================================
+
+- Defined in :ref:`file__home_runner_work_tettigoniidae_tettigoniidae_Library_Data_CMakeLists.txt`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: include_directories(BEFORE ${CMAKE_CURRENT_SOURCE_DIR})
+   :project: tettigoniidae

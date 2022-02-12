@@ -1,0 +1,47 @@
+
+.. _program_listing_file__home_runner_work_tettigoniidae_tettigoniidae_Library_Processors_CMakeLists.txt:
+
+Program Listing for File CMakeLists.txt
+=======================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__home_runner_work_tettigoniidae_tettigoniidae_Library_Processors_CMakeLists.txt>` (``/home/runner/work/tettigoniidae/tettigoniidae/Library/Processors/CMakeLists.txt``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   # CMakeLists for tettigoniidae/Library/Processors
+   # Author: N.S. Oblath
+   
+   include_directories( BEFORE 
+       ${CMAKE_CURRENT_SOURCE_DIR}
+   )
+   
+   set( TTGD_LIBS 
+       TTGDData
+   )
+   
+   set( TTGDProcs_HEADERFILES
+       Adder.hh
+   )
+   
+   set( TTGDProcs_SOURCEFILES
+       Adder.cc
+   )
+   
+   
+   ##################################################
+   
+   pbuilder_library( 
+       TARGET TTGDProcs 
+       SOURCES ${TTGDProcs_SOURCEFILES}
+       PUBLIC_EXTERNAL_LIBRARIES ${PUBLIC_EXT_LIBS}
+       PROJECT_LIBRARIES ${TTGD_LIBS}
+   )
+   
+   pbuilder_component_install_and_export( 
+       COMPONENT Library
+       LIBTARGETS TTGDProcs
+   )
+   
+   pbuilder_install_headers( ${TTGDProcs_HEADERFILES} )

@@ -1,0 +1,42 @@
+
+.. _program_listing_file__home_runner_work_tettigoniidae_tettigoniidae_Library_Data_IntData.hh:
+
+Program Listing for File IntData.hh
+===================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__home_runner_work_tettigoniidae_tettigoniidae_Library_Data_IntData.hh>` (``/home/runner/work/tettigoniidae/tettigoniidae/Library/Data/IntData.hh``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   /*
+    * IntData.hh
+    *
+    *  Created on: Jan 6, 2022
+    *      Author: N.S. Oblath
+    */
+   
+   #ifndef TTGD_DATA_INTDATA
+   #define TTGD_DATA_INTDATA
+   
+   #include "Data.hh"
+   #include "MemberVariable.hh"
+   
+   namespace tettigoniidae
+   {
+   
+       class IntData : public Nymph::Data
+       {
+           public:
+               IntData();
+   
+               virtual ~IntData();
+   
+               MEMVAR( int, IValue1 );
+               MEMVAR( int, IValue2 );
+       };
+   
+   } /* namespace tettigoniidae */
+   
+   #endif /* TTGD_DATA_INTDATA */

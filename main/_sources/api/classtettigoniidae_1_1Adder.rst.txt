@@ -1,0 +1,26 @@
+.. _exhale_class_classtettigoniidae_1_1Adder:
+
+Class Adder
+===========
+
+- Defined in :ref:`file__home_runner_work_tettigoniidae_tettigoniidae_Library_Processors_Adder.hh`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public Processor``
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: tettigoniidae::Adder
+   :project: tettigoniidae
+   :members:
+   :protected-members:
+   :undoc-members:

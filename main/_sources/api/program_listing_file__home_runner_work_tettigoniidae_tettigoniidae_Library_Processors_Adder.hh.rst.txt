@@ -1,0 +1,48 @@
+
+.. _program_listing_file__home_runner_work_tettigoniidae_tettigoniidae_Library_Processors_Adder.hh:
+
+Program Listing for File Adder.hh
+=================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__home_runner_work_tettigoniidae_tettigoniidae_Library_Processors_Adder.hh>` (``/home/runner/work/tettigoniidae/tettigoniidae/Library/Processors/Adder.hh``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef TTGD_PROCESSORS_ADDER
+   #define TTGD_PROCESSORS_ADDER
+   
+   #include "Processor.hh"
+   #include "SignalData.hh"
+   #include "SlotData.hh"
+   
+   namespace tettigoniidae
+   {
+       class IntData;
+   
+       class Adder : public Nymph::Processor
+       {
+           public:
+               Adder( const std::string& name = "adder" );
+   
+               virtual ~Adder();
+   
+               void Configure( const scarab::param_node& node );
+   
+               MEMVAR( int, IntValue );
+   
+           public:
+               void Add( IntData& data );
+   
+           public:
+               Nymph::SignalData fIntSignal;
+   
+               Nymph::SlotData< Nymph::In<IntData>, Nymph::Out<> > fAddIntSlot;
+   
+       };
+   
+   } /* namespace tettigoniidae */
+   
+   #endif /* TTGD_PROCESSORS_ADDER */
