@@ -1,0 +1,63 @@
+name: Build and publish docs
+
+on:
+  pull_request:
+  push:
+    branches: [main, develop]
+    tags: ['*']
+
+#env:
+#  Nymph_BUILD_NYMPH_EXE: ON
+#  Nymph_ENABLE_EXECUTABLES: ON
+#  Nymph_ENABLE_PYTHON: OFF
+#  Nymph_ENABLE_TESTING: ON
+#  Nymph_SINGLETHREADED: OFF
+#  Nymph_TAG: test
+
+jobs:
+
+  build:
+    name: Build and Publish
+
+    runs-on: ubuntu-20.04
+
+    steps:
+
+      - name: Checkout reposistory
+        uses: actions/checkout@master
+        with:
+          submodules: recursive
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.10"
+
+      - name: Linux Dependencies
+        if: startsWith(matrix.os, 'ubuntu')  # Linux only
+        run: |
+          sudo apt-get update
+          sudo apt-get install -yq \
+            doxygen
+
+      - name: Configure
+        run: |
+          mkdir -p build
+          cd build
+          cmake ..
+
+      - name: Build
+        run: |
+          cd Documentation2
+          make html
+
+      #- name: Run tests
+      #  run: |
+      #    cd build
+      #    Testing/RunTests
+
+# For debugging
+#      - name: Setup tmate session
+#        if: ${{ ! success() }}
+#        uses: mxschmitt/action-tmate@v3
+
