@@ -92,6 +92,9 @@ html_theme = 'sphinx_rtd_theme'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
+# Favicon
+html_favicon = '_static/katydid_logo_favicon.ico'
+
 def setup(app):
     import os, subprocess
 
