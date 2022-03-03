@@ -23,3 +23,4 @@ clean:
 %: Makefile
 	rm -rf ../build/_doxygen/ ../build/_cmake/ api/
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+	touch build/html/.nojekyll
