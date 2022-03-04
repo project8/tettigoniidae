@@ -47,14 +47,15 @@
   
     <!-- Dynaically add dropdown options -->
     <script>
+      var menuFilled = false;
+      
       document.getElementById('dropdownMenuLink').onclick = function() {
-        var options = document.getElementById("dropdownMenuOptions");
-        if (! options.hasChildNodes()) {
+        if (! menuFilled) {
           console.log("Filling options");
           var values = ["main", "develop", "v1.0.0", "v1.2.0"];
 
-          for (const val of values)
-          {
+          var options = document.getElementById("dropdownMenuOptions");
+          for (const val of values) {
             console.log("Adding element " + val);
             var option = document.createElement("a");
             option.class = "dropdown-item";
@@ -64,6 +65,8 @@
             var lineBreak = document.createElement("br");
             options.insertAfter(lineBreak, option);
           }
+
+          menuFilled = true;
         }
       }
     </script>
