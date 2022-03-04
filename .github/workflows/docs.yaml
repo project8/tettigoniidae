@@ -23,15 +23,22 @@ jobs:
 
     steps:
 
-      - name: Checkout reposistory
+      - name: Checkout reposistory -- this version
         uses: actions/checkout@master
         with:
           submodules: recursive
+          path: this-ver
+
+      - name: Checkout repository -- gh-pages
+        uses: actions/checkout@v3
+        with:
+          ref: gh-pages
+          path: gh-pages
 
       - name: Set output
         id: vars
-        run: echo ::set-output name=short_ref::${GITHUB_REF#refs/*/}
-
+        run: |
+          echo ::set-output name=short_ref::${GITHUB_REF#refs/*/}
 
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -49,7 +56,9 @@ jobs:
 
       - name: Build
         run: |
-          cd Documentation2
+          ls
+          ls gh-pages
+          cd this-ver/Documentation2
           pip install -r requirements.txt
           make html
 
@@ -57,7 +66,7 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4.2.3
         with:
           branch: gh-pages # The branch the action should deploy to.
-          folder: Documentation2/build/html # The folder the action should deploy.
+          folder: this-ver/Documentation2/build/html # The folder the action should deploy.
           target-folder: ${{ steps.vars.outputs.short_ref }}
 
       #- name: Run tests
