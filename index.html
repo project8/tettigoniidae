@@ -63,15 +63,16 @@
               console.log(directories);
               // add each option: each array element is assumed to be a tag or branch name, and is the directory to link to
               var options = document.getElementById("dropdownMenuOptions");
-              for (const dir of directories) {
+              for (const [i, dir] of directories.entries()) {
                 console.log("Adding element " + dir);
                 var option = document.createElement("a");
                 option.className = "dropdown-item";
                 option.innerHTML = dir;
                 option.href = "/tettigoniidae/" + dir;
                 options.appendChild(option);
-                options.appendChild( document.createElement("br") );
-              }
+                if (i !== directories.length - 1) {
+                  options.appendChild( document.createElement("br") );
+                }              }
             }
           });
 
