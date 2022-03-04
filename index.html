@@ -43,6 +43,8 @@
           -->
         </div>
       </div>
+      <div id=directories>
+      </div>
     </div>
   
     <!-- Optional JavaScript -->
@@ -59,9 +61,14 @@
         if (! menuFilled) {
           console.log("Filling options");
           
-          $( "#directories" ).load( "Directories.txt", function() {
-            console.log(document.getElementById('directories'));
-            alert( "Load was performed." );
+          $( "#directories" ).load( "Directories.txt", function(response, status, xhr) {
+            if ( status == "error" ) {
+              console.log( "Unable to load directories: " + xhr.status + " " + xhr.statusText );
+              alert( "Unable to load directories" );
+            } else {
+              console.log(document.getElementById('directories'));
+              alert( "Load was performed." );
+            }
           });
           
           var values = ["main", "develop", "v1.0.0", "v1.2.0"];
