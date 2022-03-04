@@ -92,6 +92,15 @@ html_theme = 'sphinx_rtd_theme'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
+# Templates path
+#templates_path = ["_templates"]
+
+html_sidebars = {
+    '**': [
+        'versioning.html',
+    ],
+}
+
 # Favicon
 html_favicon = '_static/katydid_logo_favicon.ico'
 
