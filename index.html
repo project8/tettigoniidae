@@ -24,7 +24,7 @@
     
     <!-- Dynaically add dropdown options -->
     <script>
-      document.getElementById('dropdownMenuLink').onclick = function() {
+      document.getElementById('dropdownDiv').onclick = function() {
  
         var values = ["main", "develop", "v1.0.0", "v1.2.0"];
 
@@ -47,7 +47,7 @@
 
       Select your documentation version:
 
-      <div class="dropdown show">
+      <div id="dropdownDiv" class="dropdown show">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Branch or Tag
         </a>
