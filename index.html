@@ -35,12 +35,6 @@
         </a>
 
         <div id="dropdownMenuOptions" class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <!--
-          <a class="dropdown-item" href="/tettigoniidae/main/index.html">main</a>
-          <a class="dropdown-item" href="#">develop</a>
-          <a class="dropdown-item" href="#">v1.0.0</a>
-          <a class="dropdown-item" href="#">v2.0.0</a>
-          -->
         </div>
       </div>
     </div>
@@ -64,7 +58,6 @@
               console.log( "Unable to load directories: " + xhr.status + " " + xhr.statusText );
               alert( "Unable to load directories" );
             } else {
-              console.log(result);
               // split file contents by new line and remove empty strings
               const directories = result.split('\n').filter(item => item);
               console.log(directories);
@@ -73,12 +66,11 @@
               for (const dir of directories) {
                 console.log("Adding element " + dir);
                 var option = document.createElement("a");
-                option.class = "dropdown-item";
+                option.className = "dropdown-item";
                 option.innerHTML = dir;
                 option.href = "/tettigoniidae/" + dir;
                 options.appendChild(option);
-                var lineBreak = document.createElement("br");
-                options.appendChild(lineBreak);
+                options.appendChild( document.createElement("br") );
               }
             }
           });
