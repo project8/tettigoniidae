@@ -10,6 +10,7 @@
 
     <title>tettigoniidae Documentation</title>
     
+    <!-- Centering CSS -->
     <style>
       .center-screen {
         display: flex;
@@ -20,6 +21,25 @@
         min-height: 100vh;
       }
     </style>
+    
+    <!-- Dynaically add dropdown options -->
+    <script>
+      document.getElementById('dropdownMenuLink').onclick = function() {
+ 
+        var values = ["main", "develop", "v1.0.0", "v1.2.0"];
+
+        var options = document.createElement("dropdownMenuOptions");
+
+        for (const val of values)
+        {
+          var option = document.createElement("a");
+          option.class = "dropdown-item";
+          option.innerHTML = val;
+          option.href = "/tettigoniidae/" + val;
+          options.appendChild(option);
+        }
+      }
+    </script>
   </head>
   <body>
     <div class="center-screen">
@@ -32,11 +52,13 @@
           Branch or Tag
         </a>
 
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <div id="dropdownMenuOptions" class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <!--
           <a class="dropdown-item" href="/tettigoniidae/main/index.html">main</a>
           <a class="dropdown-item" href="#">develop</a>
           <a class="dropdown-item" href="#">v1.0.0</a>
           <a class="dropdown-item" href="#">v2.0.0</a>
+          -->
         </div>
       </div>
     </div>
