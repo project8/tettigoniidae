@@ -56,8 +56,8 @@ jobs:
       - name: Build
         run: |
           ls
-          ls gh-pages
-          cd this-ver/Documentation2
+          ls from-gh-pages
+          cd Documentation2
           pip install -r requirements.txt
           make html
 
@@ -65,7 +65,7 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4.2.3
         with:
           branch: gh-pages # The branch the action should deploy to.
-          folder: this-ver/Documentation2/build/html # The folder the action should deploy.
+          folder: Documentation2/build/html # The folder the action should deploy.
           target-folder: ${{ steps.vars.outputs.short_ref }}
 
       #- name: Run tests
