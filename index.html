@@ -43,8 +43,6 @@
           -->
         </div>
       </div>
-      <div id=directories>
-      </div>
     </div>
   
     <!-- Optional JavaScript -->
@@ -61,12 +59,14 @@
         if (! menuFilled) {
           console.log("Filling options");
           
-          $.get( "Directories.txt", function(directories, status, xhr) {
+          $.get( "Directories.txt", function(result, status, xhr) {
             if ( status == "error" ) {
               console.log( "Unable to load directories: " + xhr.status + " " + xhr.statusText );
               alert( "Unable to load directories" );
             } else {
-              console.log(document.getElementById('directories'));
+              console.log(result);
+              const directories = result.split('\n');
+              console.log(directories);
               var options = document.getElementById("dropdownMenuOptions");
               for (const dir of directories) {
                 console.log("Adding element " + dir);
