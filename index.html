@@ -48,19 +48,22 @@
     <!-- Dynaically add dropdown options -->
     <script>
       document.getElementById('dropdownMenuLink').onclick = function() {
-        console.log("Filling options");
-        var values = ["main", "develop", "v1.0.0", "v1.2.0"];
-
         var options = document.getElementById("dropdownMenuOptions");
+        if (! options.hasChildNodes()) {
+          console.log("Filling options");
+          var values = ["main", "develop", "v1.0.0", "v1.2.0"];
 
-        for (const val of values)
-        {
-          console.log("Adding element " + val);
-          var option = document.createElement("a");
-          option.class = "dropdown-item";
-          option.innerHTML = val;
-          option.href = "/tettigoniidae/" + val;
-          options.appendChild(option);
+          for (const val of values)
+          {
+            console.log("Adding element " + val);
+            var option = document.createElement("a");
+            option.class = "dropdown-item";
+            option.innerHTML = val;
+            option.href = "/tettigoniidae/" + val;
+            options.appendChild(option);
+            var lineBreak = document.createElement("br");
+            options.insertAfter(lineBreak, option);
+          }
         }
       }
     </script>
