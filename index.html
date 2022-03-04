@@ -52,6 +52,12 @@
       document.getElementById('dropdownMenuLink').onclick = function() {
         if (! menuFilled) {
           console.log("Filling options");
+          
+          $( "#directories" ).load( "Directories.txt", function() {
+            console.log(document.getElementById('directories'));
+            alert( "Load was performed." );
+          });
+          
           var values = ["main", "develop", "v1.0.0", "v1.2.0"];
 
           var options = document.getElementById("dropdownMenuOptions");
