@@ -65,8 +65,10 @@
               alert( "Unable to load directories" );
             } else {
               console.log(result);
-              const directories = result.split('\n');
+              // split file contents by new line and remove empty strings
+              const directories = result.split('\n').filter(item => item);
               console.log(directories);
+              // add each option: each array element is assumed to be a tag or branch name, and is the directory to link to
               var options = document.getElementById("dropdownMenuOptions");
               for (const dir of directories) {
                 console.log("Adding element " + dir);
@@ -80,21 +82,7 @@
               }
             }
           });
-          /*
-          var values = ["main", "develop", "v1.0.0", "v1.2.0"];
 
-          var options = document.getElementById("dropdownMenuOptions");
-          for (const val of values) {
-            console.log("Adding element " + val);
-            var option = document.createElement("a");
-            option.class = "dropdown-item";
-            option.innerHTML = val;
-            option.href = "/tettigoniidae/" + val;
-            options.appendChild(option);
-            var lineBreak = document.createElement("br");
-            options.appendChild(lineBreak);
-          }
-          */
         }
         menuFilled = true;
       }
