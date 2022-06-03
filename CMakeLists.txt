@@ -18,6 +18,13 @@ include( Nymph )
 
 set( CMAKE_CXX_STANDARD 17 )
 
+###########
+# options #
+###########
+
+# Build python bindings
+option( Tettigoniidae_ENABLE_PYTHON "Build python bindings" OFF )
+
 
 ################
 # dependencies #
@@ -25,8 +32,6 @@ set( CMAKE_CXX_STANDARD 17 )
 
 set( PUBLIC_EXT_LIBS )
 set( PRIVATE_EXT_LIBS )
-
-
 
 
 #####################
@@ -45,18 +50,18 @@ pbuilder_add_submodule( Nymph nymph )
 
 pbuilder_use_sm_library( Nymph Nymph )
 
-###########
-# psyllid #
-###########
+#################
+# tettigoniidae #
+#################
 
 # add include directories
 include_directories( BEFORE
-    Library/Processors
-    Library/Data
+    Cpp/Library/Processors
+    Cpp/Library/Data
 )
 
 # build this project
-add_subdirectory( Library )
+add_subdirectory( Cpp/Library )
 
 if( tettigoniidae_ENABLE_EXECUTABLES )
     #add_subdirectory( Executables )

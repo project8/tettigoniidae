@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: tettigoniidae
+Version: 0.0.0
+Summary: A C++/python based test repository for data analysis.
+Home-page: https://github.com/project8/tettigoniidae
+Author: Project 8
+Author-email: project8xperiment@gmail.com
+Classifier: License :: Other/Proprietary License
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: Unix
+Classifier: Programming Language :: C++
+Classifier: Programming Language :: Python
+Requires-Python: >=3.6

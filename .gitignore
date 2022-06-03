@@ -41,6 +41,7 @@
 
 # Build directories
 build*/
+dist*/
 
 # Documentation builds in the source tree
 Documentation2/build/
