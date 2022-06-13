@@ -49,3 +49,5 @@ Documentation2/source/api/
 
 # also, for now we're using Documentation2 instead of Documentation
 Documentation/
+
+*.egg-info
