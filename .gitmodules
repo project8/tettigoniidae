@@ -1,3 +1,4 @@
 [submodule "nymph"]
 	path = nymph
 	url = https://github.com/project8/nymph
+	branch = nymph2_2/workshop
