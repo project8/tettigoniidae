@@ -23,7 +23,7 @@ set( CMAKE_CXX_STANDARD 17 )
 ###########
 
 # Build python bindings
-option( Tettigoniidae_ENABLE_PYTHON "Build python bindings" OFF )
+option( Tettigoniidae_ENABLE_PYTHON "Build python bindings" ON )
 
 
 ################
@@ -72,6 +72,29 @@ if( tettigoniidae_ENABLE_TESTING )
     #add_subdirectory( Testing )
 endif()
 
+############
+# bindings #
+############
+
+if( Tettigoniidae_ENABLE_PYTHON )
+    find_package( Python3 REQUIRED COMPONENTS Interpreter Development )
+    set(PYBIND11_PYTHON_VERSION ${Python3_VERSION} CACHE STRING "")
+    find_package( pybind11 REQUIRED )
+    include_directories( ${Python3_INCLUDE_DIRS} )
+
+    # add include directories
+    include_directories( BEFORE
+        Python/Bindings/Data
+    )
+
+    # build this project
+    add_subdirectory( Python/Bindings )
+
+    set_option(Nymph_ENABLE_PYTHON True)
+
+else( Tettigoniidae_ENABLE_PYTHON )
+    set_option(Nymph_ENABLE_PYTHON False)
+endif( Tettigoniidae_ENABLE_PYTHON )
 
 ##################
 # package config #
